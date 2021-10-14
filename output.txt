@@ -1,4 +1,13 @@
-R001 J1 J2 
-R002 J6 J7 J8 J9 
-R003 J13 J14 J15 J16 
-R004 I17 I18 I19 
+R001 J1 J2 J3 J4 J5 J6 
+R002 J10 
+R003 J14 
+R004 H1 H2 H3 H4 H5 H6 H7 
+R005 J18 J19 J20 
+R006 I11 I12 I13 
+R007 H14 H15 H16 
+R008 G8 G9 G10 
+R009 G17 G18 G19 
+R010 I8 I9 
+R011 F1 F2 F3 F4 F5 F6 F7 
+R012 F11 F12 
+Max booking limit is 20. Please split your booking into multiple bookings. Sorry for the inconvenience.
