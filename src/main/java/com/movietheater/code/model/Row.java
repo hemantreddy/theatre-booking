@@ -12,7 +12,7 @@ public class Row {
     int firstAvailable = 0;
 
     public Row() {
-        for (int i = 0; i < Config.NUM_COLS; i++) {
+        for (int column = 0; column < Config.NUM_COLS; column++) {
             seats.add(new Seat());
         }
     }
@@ -54,7 +54,7 @@ public class Row {
         maxst = st;
 
         for (int i = st; i < Config.NUM_COLS; i++) {
-            if (!seats.get(i).isReserved && !seats.get(i).isOccupied) {
+            if (!(seats.get(i).isReserved || seats.get(i).isOccupied)) {
                 cur++;
                 if (cur > max) {
                     max = cur;

@@ -40,39 +40,39 @@ public class Driver {
             // Read each request
             String[] splits = bookingRequest.split(" ");
             String reqId = splits[0];
-            int numSeats = Integer.parseInt(splits[1]);
+            int numOfSeatsRequested = Integer.parseInt(splits[1]);
 
-            if (numSeats > Config.NUM_COLS) {
+            if (numOfSeatsRequested > Config.NUM_COLS) {
                 try {
                     throw new BookingLimitExceededException("Max booking limit is " + Config.NUM_COLS + ". Please split your booking into multiple bookings. Sorry for the inconvenience.");
                 } catch (BookingLimitExceededException e) {
-                    System.err.println(e.getMessage());
+                    output.append(e.getMessage()).append("\n");
                     bookingRequest = buf.readLine();
                     continue;
                 }
             }
             // O(n)`
-            Integer bestFitRowForBooking = theater.getBestFitRowForBooking(numSeats);
+            Integer bestFitRowForBooking = theater.getBestFitRowForBooking(numOfSeatsRequested);
 
             if (bestFitRowForBooking == -1) {
                 try {
                     throw new NotEnoughContinuousSeats("Not enough seats available together. Sorry for the inconvenience.");
                 } catch (NotEnoughContinuousSeats e) {
-                    System.err.println(e.getMessage());
+                    output.append(e.getMessage()).append("\n");
                     bookingRequest = buf.readLine();
                     continue;
                 }
             }
 
             // O(m)
-            theater.book(numSeats, bestFitRowForBooking, reqId);
+            theater.book(numOfSeatsRequested, bestFitRowForBooking, reqId);
 
-            List<String> seatIds = theater.getSeatIds(reqId);
+            List<String> reservedSeats = theater.getBookedTickets(reqId);
 
 
-            if (seatIds != null && !seatIds.isEmpty()) {
+            if (reservedSeats != null && !reservedSeats.isEmpty()) {
                 output.append(reqId).append(" ");
-                for (String sId : seatIds) {
+                for (String sId : reservedSeats) {
                     output.append(sId).append(" ");
                 }
             }
@@ -81,5 +81,6 @@ public class Driver {
         }
         writer.write(output.toString());
         writer.close();
+        System.out.println("The output has been saved to: " + Config.DEFAULT_OUTPUT_FILE);
     }
 }
