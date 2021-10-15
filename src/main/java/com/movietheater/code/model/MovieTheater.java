@@ -10,7 +10,7 @@ import java.util.Map;
 
 public class MovieTheater {
 
-    ArrayList<Row> rows = new ArrayList<Row>();
+    ArrayList<Row> rows = new ArrayList<>();
 
 
     Map<String, List<String>> bookedTickets = new HashMap<>();
@@ -29,7 +29,7 @@ public class MovieTheater {
      * Alternatively, can use PriorityQueue (but updates for the next and previous rows would then be non-trivial)
      *
      * @param requiredSeats
-     * @return
+     * @return selectedRow
      */
     public Integer getBestFitRowForBooking(int requiredSeats) {
         // returns the row with the min continuousVacantSeats that is greater than requiredSeats
@@ -63,14 +63,14 @@ public class MovieTheater {
         // book numOfSeatsRequested seats starting from firstAvailable of rowIndex
         Row row = rows.get(rowIndex);
 
-        List<String> allotedSeats = new ArrayList<>();
+        List<String> allottedSeats = new ArrayList<>();
         int pointerToFirstEmptySeat = row.getFirstAvailable();
 
         // O(m); m -> number of seats / number of columns
         for (int seat = 0; seat < numOfSeatsRequested; seat++) {
             row.getSeats().get((seat + pointerToFirstEmptySeat)).setOccupied(true);
             char rowId = (char) ('J' - rowIndex);
-            allotedSeats.add(new StringBuilder().append(rowId).append(seat + pointerToFirstEmptySeat + 1).toString());
+            allottedSeats.add(new StringBuilder().append(rowId).append(seat + pointerToFirstEmptySeat + 1).toString());
         }
         // add buffer -> O(m)
         // adding buffer in currentRow - 1
@@ -107,7 +107,7 @@ public class MovieTheater {
 
 
         // O(m)
-        bookedTickets.put(requestId, allotedSeats);
+        bookedTickets.put(requestId, allottedSeats);
 
         row.setFirstAvailable(pointerToFirstEmptySeat);
 

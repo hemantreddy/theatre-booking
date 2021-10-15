@@ -1,21 +1,22 @@
 # Movie Theatre Seating
 
-This algorithm attempts to fulfil the reservation requests, taking into account the size and buffer required 
+This algorithm attempts to fulfil the reservation requests, taking into account the size and buffer of seats required 
 between each booking.
 
-## Assumptions
+### Assumptions
 
 * Rows are labelled from A - J and, and screen is closest to the A row. 
 * If the system gets a request where the number of seats requested is greater than any contiguous available seats, the 
 request is denied, and we move on to the next request. 
+* Best seats are defined by the distance between screen and seats. Higher the distance, better the seats. 
 
-## Approach
+### Approach
 * Always fill from the J left corner, and go towards right for seats and bottom for rows, making 
 sure you utilise all the seats properly. 
 * Every row class has the ``maxiumContinuousAvailable`` count and the ``firstAvailableSeat`` pointer at which that count starts. This helps
 us evaluate which row would work out best for which seat
 
-## Steps to run the project
+### Steps to run the project
 To compile the project, open your terminal and 
 go to the root directory of the project, and run the following command
 
@@ -35,6 +36,7 @@ R002 4
 R003 4
 R004 3
 ```
+``ROOX`` corresponds to request ID and number after space corresponds to the number of seats requested. 
 
 ### Further Improvements
 * Cancellations

@@ -9,9 +9,7 @@
       <change beforePath="$PROJECT_DIR$/input.txt" beforeDir="false" afterPath="$PROJECT_DIR$/input.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/movieTheater.iws" beforeDir="false" afterPath="$PROJECT_DIR$/movieTheater.iws" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/output.txt" beforeDir="false" afterPath="$PROJECT_DIR$/output.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/movietheater/code/Driver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/movietheater/code/Driver.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/movietheater/code/model/MovieTheater.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/movietheater/code/model/MovieTheater.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/movietheater/code/model/Row.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/movietheater/code/model/Row.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -179,6 +177,14 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
   <component name="GitToolBoxStore">
     <option name="recentBranches">
       <RecentBranches>
@@ -277,7 +283,7 @@
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Console Font" />
   </component>
   <component name="RunManager">
     <configuration selected="false" default="true" type="Applet" factoryName="Applet">
